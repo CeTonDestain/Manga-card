@@ -1,0 +1,270 @@
+@keyframes box-shadow{
+    from{
+        box-shadow:
+        0 0 30px 30px rgb(224, 223, 223), 
+        0 0 50px 30px #bda104,
+        0 0 70px 45px #FFD700; 
+
+    }
+    to{
+        box-shadow:
+        0 0 60px 30px rgb(204, 204, 204), 
+        0 0 70px 40px #FFD700,
+        0 0 100px 60px #FFD700; 
+    }
+}
+
+@keyframes damageJoueurSucceed{
+    from{
+        bottom:0;
+        left:0;
+        transform: rotate(0deg);
+    }
+    to{
+        bottom:10%;
+        left: 80rem;
+        transform: rotate(64deg);
+    }
+
+    
+
+}
+@keyframes damageJoueurSucceedMobileXL{
+    from{
+            bottom:0;
+            transform: rotate(0deg);
+    }
+    to{
+            bottom:80rem;
+            transform: rotate(0deg);
+    }
+
+    
+
+}
+@keyframes damageJoueurSucceedMobileMD{
+    from{
+            bottom:0;
+            transform: rotate(0deg);
+    }
+    to{
+            bottom:30rem;
+            transform: rotate(0deg);
+    }
+
+    
+
+}
+
+@keyframes damageTakenForJoueurSucceed  {
+    10%, 90% {
+        transform: translate3d(-3px, 7px, 3px);
+      }
+      
+      20%, 80% {
+        transform: translate3d(3px, 3px, 5px);
+      }
+    
+      30%, 50%, 70% {
+        transform: translate3d(-8px, -8px, -6px);
+      }
+    
+      40%, 60% {
+        transform: translate3d(8px, 7px, 5px);
+      }
+}
+
+@keyframes damageEsquiveForJoueurSucceed{
+    from{
+        left:0;
+        transform: rotate(0deg);
+    }
+    to{
+        left: 30rem;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes actionFailed  {
+    10%, 90% {
+        transform: translate3d(-8px, 7px, 3px);
+
+      }
+      
+      20%, 80% {
+        transform: translate3d(7px, 3px, 5px);
+    
+      }
+    
+      30%, 50%, 70% {
+        transform: translate3d(-8px, -8px, -6px);
+
+      }
+    
+      40%, 60% {
+        transform: translate3d(8px, 7px, 5px);
+    
+      }
+}
+
+@keyframes boostDamage{
+    from{
+        box-shadow:
+        0 0 0px 00px rgb(204, 204, 204), 
+        0 0 80px 00px #FFD700;
+        bottom: 0rem;
+    }
+    to{
+        box-shadow:
+        0 0 60px 0px rgb(204, 204, 204), 
+        10px -100px 80px 50px #ff0000;
+        bottom: 5rem;
+    }
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+@keyframes boostEsquive{
+    from{
+        box-shadow:
+        0 0 0px 00px rgb(204, 204, 204), 
+        0 0 80px 00px #FFD700;
+        bottom: 0rem;
+    }
+    to{
+        box-shadow:
+        0 0 60px 0px rgb(204, 204, 204), 
+        10px -100px 80px 50px #2825ce;
+        bottom: 5rem;
+    }
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+@keyframes heal{
+    from{
+        box-shadow:
+        0 0 0px 00px rgb(204, 204, 204), 
+        0 0 80px 00px #FFD700;
+        bottom: 0rem;
+    }
+    to{
+        box-shadow:
+        0 0 60px 0px rgb(204, 204, 204), 
+        10px -100px 80px 50px #0ddb05;
+        bottom: 5rem;
+    }
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes eveil{
+    from{
+        box-shadow:
+        0 0 30px 30px rgb(224, 223, 223), 
+        0 0 50px 30px #bda104,
+        0 0 70px 45px #FFD700; 
+        transform: rotate(0deg);
+        filter: brightness(900%);
+    }
+    to{
+        box-shadow: 
+        0 0 30px 30px rgb(204, 204, 204), 
+        0 0 120px 80px #FFD700,
+        0 0 200px 120px #FFD700; 
+        transform: rotate(720deg);
+        filter: brightness(50%);
+    }
+}
+
+
+@keyframes damageIaSucceed{
+    from{
+        bottom:0;
+        left:0;
+        transform: rotate(0deg);
+    }
+    to{
+        bottom:10%;
+        left: -80rem;
+        transform: rotate(-64deg);
+    }
+
+}
+
+@keyframes damageIaSucceedMobileXL{
+    from{
+        top:0;
+        transform: rotate(0deg);
+    }
+    to{
+        top:80rem;
+        transform: rotate(180deg);
+    }
+
+}
+@keyframes damageIaSucceedMobileMD{
+    from{
+        top:0;
+        transform: rotate(0deg);
+    }
+    to{
+        top:30rem;
+        transform: rotate(180deg);
+    }
+
+}
+
+@keyframes damageEsquiveForIaSucceed{
+    from{
+        left:0;
+        transform: rotate(0deg);
+    }
+    to{
+        left: -30rem;
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes sacrifice{
+    from{
+        transform: scale(1.0);
+        box-shadow:
+        0 0 0px 0px rgb(224, 223, 223), 
+        0 0 0px 0px #bda104,
+        0 0 0px 0px #FFD700; 
+    }
+    to{
+        transform: scale(1.3);
+        box-shadow:
+        0 0 300px 300px rgb(224, 223, 223), 
+        0 0 50px 30px #bda104,
+        0 0 1000px 1000px #FFD700; 
+    }
+    
+}

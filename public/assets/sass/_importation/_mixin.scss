@@ -1,0 +1,55 @@
+@mixin borderImage {
+    position: relative;
+    margin-top: 5rem;
+
+    .characterImg,
+    img {
+        border: 0.2rem solid $borderCard;
+        border-radius: 2rem;
+        position: relative;
+    }
+    .characterName {
+        font-size: 2.5rem;
+        font-weight: 600;
+        position: absolute;
+        background-color: white;
+        left: 50%;
+        bottom: -1.5rem;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border: 0.3rem solid $borderCard;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+    }
+}
+
+@mixin footerButton{
+    p {
+        border: 0.3rem solid $borderCard;
+        border-radius: 2rem;
+        height: 4rem;
+        background-color: black;
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+        padding-top: 0.5rem;
+
+    }
+    &:hover{
+      transform: scale(1.1);
+    }
+}
+
+@mixin modal-background {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+}

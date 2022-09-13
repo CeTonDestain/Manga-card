@@ -1,0 +1,305 @@
+@import "./_importation/variables";
+@import "./_importation/mixin";
+@import "./_importation/reset";
+@import "./_importation/animation.scss";
+
+main {
+    .modeDeJeuContainer{
+        display: flex;
+        justify-content: center;
+        padding-top: 5rem;
+        .mode{
+            background-color: black;
+            border: 0.2rem solid $borderCard;
+            font-size: 2rem;
+            color: white;
+            height: 20rem;
+            width: 30rem;
+
+            @media screen and (max-width: $md-breakpoint)  {
+                height: 10rem;
+                width: 15rem;
+            }
+            .duelTitle{
+                // text-align: center;
+                font-family: "target";
+                font-size: 10rem;
+                color: $borderCard;
+                padding-top: 3rem;
+
+                @media screen and (max-width: $md-breakpoint)  {
+                    font-size: 3rem;
+                    padding-top: 1rem;
+                }
+            }
+            .duelDescription{
+                padding-top: 1rem;    
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif  ;
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+.profileMain{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.profileContainer{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(73, 71, 71, 0.473);
+    margin-top: 5rem;
+    padding-right: 20rem;
+    @media screen and (max-width: $md-breakpoint) {
+        width: 10rem;
+        
+    }
+    
+    .textImageContainer{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5rem;
+        padding: 2rem;
+        line-height: 10rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        .textProfile{
+            @media screen and (max-width: $md-breakpoint) {
+                order: -1;
+                
+            }
+        }
+
+        .profileImg{
+            position: relative;
+            .imgChoseProfile{
+                position: absolute;
+                top: 20%;
+                right: 30%;
+                width: 10rem;
+                height: 10rem;
+                border-radius: 50rem;
+                background: white;
+                display: none;
+                
+                img{
+                    max-width:100%;
+                    max-height:100%;
+                    width: 5rem;
+                    
+                    
+                }
+                @media screen and (max-width: $md-breakpoint) {
+                    order: 0;
+    
+                }
+            }
+            &:hover{
+                img{
+                    filter:brightness(20%);
+                }
+                .imgChoseProfile{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .pseudoProfile{
+            font-size: 5rem;
+            color: rgb(221, 219, 219);
+        }
+        .bioProfileText{
+            font-size: 2rem;
+            color: rgb(221, 219, 219);
+            text-align: left;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .bioProfileChange{
+            line-height: normal
+        }
+    }
+}
+.modal{
+    @include modal-background;
+    z-index: 7;
+
+    
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        border: 1px solid rgb(0, 0, 0);
+        width: 100%;
+        
+        .messageContent {
+            display: flex;
+                padding: 2rem;
+                background-color: black;
+                border: 0.2rem solid $borderCard;
+                overflow-x:auto;
+                gap: 5rem;
+                @media screen and (max-width: $md-breakpoint) {
+                    width: 100%;
+                }
+                
+                image{
+                    border: 0.1rem solid $borderCard;
+                    width: 30rem;
+                }
+                .buttonModal {
+                    position: fixed;
+                    
+                    p {
+                        border: 0.3rem solid $borderCard;
+                        border-radius: 2rem;
+                        height: 4rem;
+                        background-color: black;
+                        font-size: 3rem;
+                        color: white;
+                        text-align: center;
+                        padding-top: 0.5rem;
+                    }
+                    &:hover{
+                        transform: scale(1.1);
+                        cursor: pointer;
+                    }
+                }
+            }
+            .modalChoiceContainer{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5rem;
+                margin-left: 10rem;
+                @media screen and (max-width: $md-breakpoint) {
+                    flex-direction: column;
+                    margin-left: 0rem;
+                    margin-top: 10rem;
+                    gap: 5rem;
+                    width: 80%;
+                    height: 20rem;
+                }
+
+                div{
+                    @include footerButton; 
+                    @media screen and (max-width: $md-breakpoint) {
+                        p{
+                        font-size: 2rem;
+                        height: 5rem;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .modalHome{
+            margin: 20% auto;
+            width: 30%;
+            @media screen and (max-width: $xl-breakpoint) {
+                margin: 30% auto;
+                width: 40%;
+            }
+        }
+        
+    }
+    .bioProfileChange{
+        textarea{
+            border: 0.5rem solid $borderCard;
+            border-radius: 2rem;
+            padding: 1rem;
+            
+        }
+        .buttonBioProfileChange{
+            button{
+                border: 0.2rem solid $borderCard;
+                border-radius: 2rem;
+                height: 4rem;
+                background-color: black;
+                font-size: 1.5rem;
+                color: white;
+                text-align: center;
+                padding-top: 0.5rem;
+        
+            }
+            &:hover{
+              cursor: pointer;
+            }
+        }
+    }
+    
+    .hide{
+        display: none;
+    }
+    .show{
+        display: block;
+
+    }
+
+    .bioProfile{
+        p{
+
+            word-wrap:break-word;
+            line-height: 3rem;
+            width: 25rem;
+        }
+    }
+
+    .optionMobile{
+        position: absolute;
+        font-size: 5rem;
+        color: white;
+        top: 5%;
+        z-index: 6;
+
+        @media screen and (min-width: $xl-breakpoint) {
+            display: none;
+        }
+
+
+    }
+
+    .rankingTable{
+        background-color: rgba(73, 71, 71, 0.473);
+        width: 60%;
+        margin: auto;
+        border-spacing: 2rem;
+
+        th{
+            font-size: 2.5rem;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        td{
+            width: 10rem;
+            color: azure;
+            font-size: 1.5rem;
+            text-align: center;
+            div{
+                display: flex;
+                float: left;
+                gap: 3rem;
+
+            img{
+                width: 15%;
+            }
+        }
+        }
+        .profileTable:hover{
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: $md-breakpoint) {
+            th{
+                font-size: 1.5rem;
+            }
+            
+        }
+    }

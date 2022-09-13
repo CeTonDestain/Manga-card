@@ -1,0 +1,138 @@
+@font-face {
+  font-family: "bungee";
+  src: url("../font/Bungee-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "alfaSlabOne";
+  src: url("../font/AlfaSlabOne-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "target";
+  src: url("../font/tarrget.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: url("../img/1364.webp") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 25rem;
+}
+
+header {
+  border-bottom: 1rem solid #ffd700;
+  background-color: black;
+}
+header h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+header h1 a {
+  color: white;
+  font-family: "bungee";
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+main .sectionTitle {
+  font-family: "alfaSlabOne";
+  text-align: center;
+  font-size: 5rem;
+  padding-top: 2rem;
+  font-weight: 200;
+  color: white;
+}
+
+footer {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+}
+main form {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  flex-wrap: wrap;
+  gap: 5rem;
+  border: 0.3rem solid #ffd700;
+  border-radius: 3rem;
+  padding: 3rem;
+}
+main form p {
+  color: red;
+}
+main form .form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+main form .form-group .form-group-input-label {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main form .form-group .form-group-input-label label {
+  font-size: 2rem;
+  color: #ffd700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+main form .form-group .form-group-input-label input {
+  border-color: #ffd700;
+  border-radius: 0.5rem;
+  height: 2rem;
+}
+main form .form-group-button {
+  text-align: center;
+}
+main form .form-group-button input {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border: 0.2rem solid #ffd700;
+  border-radius: 2rem;
+}
+main form .form-group-button input:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+main p {
+  font-size: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+main p a {
+  color: white;
+  font-weight: 900;
+}
+
+/*# sourceMappingURL=account.css.map */

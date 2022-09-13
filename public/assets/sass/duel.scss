@@ -1,0 +1,426 @@
+@import "./_importation/variables";
+@import "./_importation/mixin";
+@import "./_importation/reset";
+@import "./_importation/animation.scss";
+
+.animation-content{
+@include modal-background;
+display: none;
+}
+.modal {
+    @include modal-background;
+    z-index: 6;
+    .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        border: 0.2rem solid $borderCard;
+        width: 50%;
+
+
+
+        .messageContent {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+
+            .message {
+                font-size: 1.5rem;
+                font-family: "bungee";
+                width: 100%;
+            }
+            .buttonModal {
+                display: flex;
+                flex-direction: row-reverse;
+                width: 100%;
+
+                p {
+                    border: 0.3rem solid $borderCard;
+                    border-radius: 2rem;
+                    height: 4rem;
+                    background-color: black;
+                    font-size: 3rem;
+                    color: white;
+                    text-align: center;
+                    padding-top: 0.5rem;
+                }
+            }
+        }
+        @media screen and (max-width: $md-breakpoint) {
+            height: 25rem;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+   
+}
+
+main {
+    .allcharacter {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3rem;
+        width: 80%;
+        margin-left: 13%;
+        text-decoration: none;
+    }
+
+    .characterWrapper {
+        @include borderImage;
+        cursor: pointer;
+        img {
+            width: 25rem;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.duelContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+
+    
+
+    .duelResume {
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        .resumeAttackJoueur {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            padding-top: 5rem;
+            background-color: rgba(6, 6, 26, 0.5);
+            height: 15rem;
+        }
+
+        .resumeAttack {
+            color: white;
+            font-size: 2rem;
+        }
+        .vs {
+            font-family: "target";
+            color: $borderCard;
+            font-size: 7rem;
+            width: 20rem;
+        }
+        @media screen and (max-width: $md-breakpoint) {
+            gap: 1rem;
+            .resumeAttackJoueur {
+                gap: 2rem;
+                padding-top: 2rem;
+                height: 7rem;
+            }
+            .resumeAttack {
+                font-size: 1rem;
+            }
+            .vs {
+                font-size: 4rem;
+                width: 10rem;
+            }
+
+    }
+    }
+
+    .duelJoueur1CardContainer,
+    .duelIaCardContainer {
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 35rem;
+        }
+
+        progress {
+            width: 35rem;
+            height: 3rem;
+        }
+        @media screen and (max-width: $md-breakpoint) {
+            img {
+                width: 15rem;
+            }
+            progress {
+                width: 15rem;
+                height: 3rem;
+            }
+            
+        }
+    }
+
+    .duelCharacterWrapper {
+        @include borderImage;
+    }
+
+    @media screen and (max-width: $xl-breakpoint) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    @media screen and (max-width: $md-breakpoint) {
+       gap: 0.1rem;
+    }
+}
+
+footer {
+    padding-bottom:5rem ;
+    .attackscontainer {
+        display: flex;
+        gap: 3rem;
+
+        .attack {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            .attackDispo {
+                border: 0.3rem solid $borderCard;
+                border-radius: 2rem;
+                background-color: black;
+                p {
+                    font-size: 3rem;
+                    color: white;
+                    text-align: center;
+                    padding-top: 0.5rem;
+                }
+                .infoAttack {
+                    font-size: 1.5rem;
+                }
+                &:hover {
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+            }
+            .attackNonDispo {
+                border: 0.3rem solid $borderCardNonDisp;
+                border-radius: 2rem;
+                background-color: rgba(0, 0, 0, 0.527);
+                p {
+                    font-size: 3rem;
+                    color: rgba(255, 255, 255, 0.527);
+                    text-align: center;
+                    padding-top: 0.5rem;
+                }
+                .infoAttack {
+                    font-size: 1.5rem;
+                }
+                &:hover {
+                    cursor: not-allowed;
+                }
+            }
+        }
+        @media screen and (max-width: $md-breakpoint) {
+        gap: 1.5rem;
+        width: 25rem;
+        flex-wrap: wrap;
+        justify-content: center;
+
+            .attack{
+            .attackDispo{
+                p{
+                    font-size: 1rem;
+                    padding: 1rem;
+                }
+                .infoAttack {
+                    font-size: 0.8rem;
+                }
+            }
+            .attackNonDispo {
+                p{
+                    font-size: 1rem;
+                    padding: 1rem;
+                }
+                .infoAttack {
+                    font-size: 0.8rem;
+                }
+            }
+         }
+        }
+
+    }
+    .backToMenu {
+        @include footerButton;
+    }
+}
+
+.resultatCharacterWrapper {
+    display: flex;
+    justify-content: center;
+    @include borderImage;
+    img {
+        border: 0.2rem solid $borderCard;
+        border-radius: 2rem;
+        position: relative;
+        width: 35rem;
+    }
+
+    .characterName {
+        bottom: -1.8rem;
+    }
+}
+.tricheContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    padding: 2rem 0;
+    text-align: center;
+
+    .pagination-item {
+        display: inline-block;
+        margin: 0 0.25rem;
+            color: $borderCard;
+            border: 0.2rem solid $borderCard;
+            padding: 1.5rem 2rem;
+
+        &.active {
+           
+                color: $borderCard;
+                border-color: red;
+                background-color: black;
+                cursor: default;
+           
+        }
+
+        &:not(.active) {
+                &:hover {
+                    background-color: rgb(255, 255, 255);
+                }
+        }
+    }
+}
+
+.search{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 73%;
+    margin-left: 13%;
+
+    input{
+        display: block;
+        height: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+
+
+
+
+
+
+.halo_aura{
+    animation: box-shadow 1s infinite alternate
+}
+
+
+
+.damageForJoueurSucceed{
+    z-index: 1;
+    animation: damageJoueurSucceed 1s infinite alternate;
+
+    @media screen and (max-width: $xl-breakpoint) {
+        animation: damageJoueurSucceedMobileXL 1s infinite alternate;
+    }
+    @media screen and (max-width: $md-breakpoint) {
+        animation: damageJoueurSucceedMobileMD 1s infinite alternate;
+    }
+}
+
+
+.damageTakenForJoueurSucceed{
+    animation:damageTakenForJoueurSucceed 2s infinite alternate;
+}
+
+
+.damageEsquiveForJoueurSucceed{
+    animation: damageEsquiveForJoueurSucceed 1s infinite alternate;
+}
+
+
+
+.actionFailed{
+    animation:actionFailed 2s infinite alternate;
+}
+
+.boostDamage{
+    animation:boostDamage 1s infinite alternate;
+}
+.boostEsquive{
+    animation:boostEsquive 1s infinite alternate;
+}
+.heal{
+    animation:heal 1s infinite alternate;
+}
+
+.eveil{
+    animation:eveil 2s infinite linear;
+}
+
+
+.damageForIaSucceed{
+    z-index: 1;
+    animation: damageIaSucceed 1s infinite alternate;
+
+    @media screen and (max-width: $xl-breakpoint) {
+        animation: damageIaSucceedMobileXL 1s infinite alternate;
+    }
+    @media screen and (max-width: $md-breakpoint) {
+        animation: damageIaSucceedMobileMD 1s infinite alternate;
+    }
+}
+
+
+.damageTakenForIaSucceed{
+    animation:damageTakenForIaSucceed 2s infinite alternate;
+}
+
+.damageEsquiveForIaSucceed{
+    animation: damageEsquiveForIaSucceed 1s infinite alternate;
+}
+
+.forbiddenAttack{
+    border: 0.3rem solid $borderCard;
+    border-radius: 2rem;
+    background-color: black;
+    p {
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+        padding-top: 0.5rem;
+    }
+    .infoAttack {
+        font-size: 1.5rem;
+    }
+    &:hover {
+    cursor: not-allowed;
+    }
+    opacity: 0.25;
+}
+
+.sacrifice{
+    z-index: 1;
+    animation:sacrifice 2s infinite  alternate;
+}

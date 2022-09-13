@@ -1,0 +1,716 @@
+@font-face {
+  font-family: "bungee";
+  src: url("../font/Bungee-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "alfaSlabOne";
+  src: url("../font/AlfaSlabOne-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "target";
+  src: url("../font/tarrget.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: url("../img/1364.webp") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 25rem;
+}
+@media screen and (max-width: 768px) {
+  img {
+    width: 15rem;
+  }
+}
+
+header {
+  border-bottom: 1rem solid #ffd700;
+  background-color: black;
+}
+header h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 4rem;
+  }
+}
+header h1 a {
+  color: white;
+  font-family: "bungee";
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1rem solid #ffd700;
+  padding: 2rem;
+  height: 2rem;
+  background-color: black;
+}
+@media screen and (max-width: 1242px) {
+  nav {
+    z-index: 5;
+    flex-direction: column;
+    height: 50rem;
+    width: 10rem;
+    position: absolute;
+    border-right: 1rem solid #ffd700;
+    justify-content: flex-start;
+    padding-top: 5rem;
+    display: none;
+  }
+}
+nav ul {
+  display: flex;
+  gap: 10rem;
+}
+@media screen and (max-width: 1242px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
+nav ul li a {
+  display: inline-block;
+  font-family: "subset-AvantGarde-Bold";
+  text-transform: "bungee";
+  font-size: 2rem;
+  color: #c6c6c6;
+  padding: 0 1.5rem;
+  text-decoration: none;
+  text-align: center;
+}
+@media screen and (max-width: 1242px) {
+  nav ul li a {
+    text-align: left;
+  }
+}
+nav ul li a:hover {
+  color: #ffd700;
+  border-bottom: 0.2rem solid #ffd700;
+}
+nav ul .deroulant .sous {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  list-style: none;
+  box-shadow: 0rem 0.1rem 0.2rem;
+}
+nav ul .deroulant .sous li {
+  text-align: left;
+  float: none;
+  width: 100%;
+}
+nav ul .deroulant .sous a:hover {
+  border-bottom: none;
+  background-color: rgba(29, 28, 28, 0.801);
+}
+nav ul .deroulant:hover .sous {
+  display: block;
+  background-color: black;
+  border: 0.1rem solid #ffd700;
+  border-bottom: none;
+  line-height: 3rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+main .sectionTitle {
+  font-family: "alfaSlabOne";
+  text-align: center;
+  font-size: 5rem;
+  padding-top: 2rem;
+  font-weight: 200;
+  color: white;
+  z-index: 3;
+}
+@media screen and (max-width: 768px) {
+  main .sectionTitle {
+    font-size: 2.5rem;
+  }
+}
+
+footer {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes box-shadow {
+  from {
+    box-shadow: 0 0 30px 30px #e0dfdf, 0 0 50px 30px #bda104, 0 0 70px 45px #FFD700;
+  }
+  to {
+    box-shadow: 0 0 60px 30px #cccccc, 0 0 70px 40px #FFD700, 0 0 100px 60px #FFD700;
+  }
+}
+@keyframes damageJoueurSucceed {
+  from {
+    bottom: 0;
+    left: 0;
+    transform: rotate(0deg);
+    @media screen and (max-width: 1242px) {
+      top: 0;
+      transform: rotate(0deg);
+    }
+  }
+  to {
+    bottom: 10%;
+    left: 80rem;
+    transform: rotate(64deg);
+    @media screen and (max-width: 1242px) {
+      top: 80rem;
+      transform: rotate(0deg);
+    }
+  }
+}
+@keyframes damageJoueurSucceedMobile {
+  from {
+    bottom: 0;
+    transform: rotate(0deg);
+  }
+  to {
+    bottom: 80rem;
+    transform: rotate(0deg);
+  }
+}
+@keyframes damageTakenForJoueurSucceed {
+  10%, 90% {
+    transform: translate3d(-3px, 7px, 3px);
+  }
+  20%, 80% {
+    transform: translate3d(3px, 3px, 5px);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-8px, -8px, -6px);
+  }
+  40%, 60% {
+    transform: translate3d(8px, 7px, 5px);
+  }
+}
+@keyframes damageEsquiveForJoueurSucceed {
+  from {
+    left: 0;
+    transform: rotate(0deg);
+  }
+  to {
+    left: 30rem;
+    transform: rotate(360deg);
+  }
+}
+@keyframes actionFailed {
+  10%, 90% {
+    transform: translate3d(-8px, 7px, 3px);
+  }
+  20%, 80% {
+    transform: translate3d(7px, 3px, 5px);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-8px, -8px, -6px);
+  }
+  40%, 60% {
+    transform: translate3d(8px, 7px, 5px);
+  }
+}
+@keyframes boostDamage {
+  from {
+    box-shadow: 0 0 0px 0px #cccccc, 0 0 80px 0px #FFD700;
+    bottom: 0rem;
+  }
+  to {
+    box-shadow: 0 0 60px 0px #cccccc, 10px -100px 80px 50px #ff0000;
+    bottom: 5rem;
+  }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+@keyframes boostEsquive {
+  from {
+    box-shadow: 0 0 0px 0px #cccccc, 0 0 80px 0px #FFD700;
+    bottom: 0rem;
+  }
+  to {
+    box-shadow: 0 0 60px 0px #cccccc, 10px -100px 80px 50px #2825ce;
+    bottom: 5rem;
+  }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+@keyframes heal {
+  from {
+    box-shadow: 0 0 0px 0px #cccccc, 0 0 80px 0px #FFD700;
+    bottom: 0rem;
+  }
+  to {
+    box-shadow: 0 0 60px 0px #cccccc, 10px -100px 80px 50px #0ddb05;
+    bottom: 5rem;
+  }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+@keyframes eveil {
+  from {
+    box-shadow: 0 0 30px 30px #e0dfdf, 0 0 50px 30px #bda104, 0 0 70px 45px #FFD700;
+    transform: rotate(0deg);
+    filter: brightness(900%);
+  }
+  to {
+    box-shadow: 0 0 30px 30px #cccccc, 0 0 120px 80px #FFD700, 0 0 200px 120px #FFD700;
+    transform: rotate(720deg);
+    filter: brightness(50%);
+  }
+}
+@keyframes damageIaSucceed {
+  from {
+    bottom: 0;
+    left: 0;
+    transform: rotate(0deg);
+  }
+  to {
+    bottom: 10%;
+    left: -80rem;
+    transform: rotate(-64deg);
+  }
+}
+@keyframes damageIaSucceedMobile {
+  from {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  to {
+    top: 80rem;
+    transform: rotate(180deg);
+  }
+}
+@keyframes damageEsquiveForIaSucceed {
+  from {
+    left: 0;
+    transform: rotate(0deg);
+  }
+  to {
+    left: -30rem;
+    transform: rotate(-360deg);
+  }
+}
+@keyframes sacrifice {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 0px 0px #e0dfdf, 0 0 0px 0px #bda104, 0 0 0px 0px #FFD700;
+  }
+  to {
+    transform: scale(1.3);
+    box-shadow: 0 0 300px 300px #e0dfdf, 0 0 50px 30px #bda104, 0 0 1000px 1000px #FFD700;
+  }
+}
+main .modeDeJeuContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+main .modeDeJeuContainer .mode {
+  background-color: black;
+  border: 0.2rem solid #ffd700;
+  font-size: 2rem;
+  color: white;
+  height: 20rem;
+  width: 30rem;
+}
+@media screen and (max-width: 768px) {
+  main .modeDeJeuContainer .mode {
+    height: 10rem;
+    width: 15rem;
+  }
+}
+main .modeDeJeuContainer .mode .duelTitle {
+  font-family: "target";
+  font-size: 10rem;
+  color: #ffd700;
+  padding-top: 3rem;
+}
+@media screen and (max-width: 768px) {
+  main .modeDeJeuContainer .mode .duelTitle {
+    font-size: 3rem;
+    padding-top: 1rem;
+  }
+}
+main .modeDeJeuContainer .mode .duelDescription {
+  padding-top: 1rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+main .modeDeJeuContainer .mode:hover {
+  cursor: pointer;
+}
+
+.profileMain {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profileContainer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(73, 71, 71, 0.473);
+  margin-top: 5rem;
+  padding-right: 20rem;
+}
+@media screen and (max-width: 768px) {
+  .profileContainer {
+    width: 10rem;
+  }
+}
+.profileContainer .textImageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding: 2rem;
+  line-height: 10rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .profileContainer .textImageContainer .textProfile {
+    order: -1;
+  }
+}
+.profileContainer .textImageContainer .profileImg {
+  position: relative;
+}
+.profileContainer .textImageContainer .profileImg .imgChoseProfile {
+  position: absolute;
+  top: 20%;
+  right: 30%;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50rem;
+  background: white;
+  display: none;
+}
+.profileContainer .textImageContainer .profileImg .imgChoseProfile img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 5rem;
+}
+@media screen and (max-width: 768px) {
+  .profileContainer .textImageContainer .profileImg .imgChoseProfile {
+    order: 0;
+  }
+}
+.profileContainer .textImageContainer .profileImg:hover img {
+  filter: brightness(20%);
+}
+.profileContainer .textImageContainer .profileImg:hover .imgChoseProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.profileContainer .textImageContainer .pseudoProfile {
+  font-size: 5rem;
+  color: #dddbdb;
+}
+.profileContainer .textImageContainer .bioProfileText {
+  font-size: 2rem;
+  color: #dddbdb;
+  text-align: left;
+}
+.profileContainer .textImageContainer .bioProfileText:hover {
+  cursor: pointer;
+}
+.profileContainer .textImageContainer .bioProfileChange {
+  line-height: normal;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 7;
+}
+.modal .modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  border: 1px solid black;
+  width: 100%;
+}
+.modal .modal-content .messageContent {
+  display: flex;
+  padding: 2rem;
+  background-color: black;
+  border: 0.2rem solid #ffd700;
+  overflow-x: auto;
+  gap: 5rem;
+}
+@media screen and (max-width: 768px) {
+  .modal .modal-content .messageContent {
+    width: 100%;
+  }
+}
+.modal .modal-content .messageContent image {
+  border: 0.1rem solid #ffd700;
+  width: 30rem;
+}
+.modal .modal-content .messageContent .buttonModal {
+  position: fixed;
+}
+.modal .modal-content .messageContent .buttonModal p {
+  border: 0.3rem solid #ffd700;
+  border-radius: 2rem;
+  height: 4rem;
+  background-color: black;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+.modal .modal-content .messageContent .buttonModal:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.modal .modal-content .modalChoiceContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  margin-left: 10rem;
+}
+@media screen and (max-width: 768px) {
+  .modal .modal-content .modalChoiceContainer {
+    flex-direction: column;
+    margin-left: 0rem;
+    margin-top: 10rem;
+    gap: 5rem;
+    width: 80%;
+    height: 20rem;
+  }
+}
+.modal .modal-content .modalChoiceContainer div p {
+  border: 0.3rem solid #ffd700;
+  border-radius: 2rem;
+  height: 4rem;
+  background-color: black;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+.modal .modal-content .modalChoiceContainer div:hover {
+  transform: scale(1.1);
+}
+@media screen and (max-width: 768px) {
+  .modal .modal-content .modalChoiceContainer div p {
+    font-size: 2rem;
+    height: 5rem;
+  }
+}
+.modal .modalHome {
+  margin: 20% auto;
+  width: 30%;
+}
+@media screen and (max-width: 1242px) {
+  .modal .modalHome {
+    margin: 30% auto;
+    width: 40%;
+  }
+}
+
+.bioProfileChange textarea {
+  border: 0.5rem solid #ffd700;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+.bioProfileChange .buttonBioProfileChange button {
+  border: 0.2rem solid #ffd700;
+  border-radius: 2rem;
+  height: 4rem;
+  background-color: black;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+.bioProfileChange .buttonBioProfileChange:hover {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.bioProfile p {
+  word-wrap: break-word;
+  line-height: 3rem;
+  width: 25rem;
+}
+
+.optionMobile {
+  position: absolute;
+  font-size: 5rem;
+  color: white;
+  top: 5%;
+  z-index: 6;
+}
+@media screen and (min-width: 1242px) {
+  .optionMobile {
+    display: none;
+  }
+}
+
+.rankingTable {
+  background-color: rgba(73, 71, 71, 0.473);
+  width: 60%;
+  margin: auto;
+  border-spacing: 2rem;
+}
+.rankingTable th {
+  font-size: 2.5rem;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+.rankingTable td {
+  width: 10rem;
+  color: azure;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.rankingTable td div {
+  display: flex;
+  float: left;
+  gap: 3rem;
+}
+.rankingTable td div img {
+  width: 15%;
+}
+.rankingTable .profileTable:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .rankingTable th {
+    font-size: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

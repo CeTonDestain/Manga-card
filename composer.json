@@ -1,0 +1,13 @@
+{
+    "name": "hp/manga-card-mvc",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.6"
+    },
+    "authors": [
+        {
+            "name": "Ludovic",
+            "email": "ludolefevre1@gmail.com"
+        }
+    ]
+}
